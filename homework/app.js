@@ -223,7 +223,10 @@ $('aside').append($myBuddies);
 function leaveTheShire() {
 
 $('body').append(makeMiddleEarth);
-$('#rivendell').append(makeHobbits);
+$('body').append(makeHobbits);
+$('#rivendell').append($('#the_Hobbits'));
+$('#the-shire').remove('#the_Hobbits');
+
 
 
 
@@ -242,6 +245,17 @@ function beautifulStranger() {
 function forgeTheFellowShip() {
 
   $('body').append(makeMiddleEarth);
+  $('body').append(makeHobbits);
+  $('body').append(makeBuddies);
+  $theFellowship = $('<div></div>');
+  $theFellowship.attr('id', 'the-fellowship');
+  $('the-fellowship').append('h1', 'The Fellowship');
+  
+
+
+
+
+
   // $('#rivendell').append(makeBuddies);
 
 
