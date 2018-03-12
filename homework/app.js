@@ -235,21 +235,59 @@ $('#the-shire').remove('#the_Hobbits');
 
 function beautifulStranger() {
   $('body').append(makeBuddies);
+
   $('.buddy:nth-child(4)').text('Aragorn');
-
-
 
   // change the buddy 'Strider' node to "Aragorn"
 }
 
+var fellowship = [hobbits, buddies];
 function forgeTheFellowShip() {
-
   $('body').append(makeMiddleEarth);
-  $('body').append(makeHobbits);
   $('body').append(makeBuddies);
-  $theFellowship = $('<div></div>');
-  $theFellowship.attr('id', 'the-fellowship');
-  $('the-fellowship').append('h1', 'The Fellowship');
+  $('body').append(makeHobbits);
+  $('#rivendell').append($('#the_Hobbits'));
+  $('#rivendell').append($('#myBuddies'));
+  $fellowship = $('<div></div>');
+  $fellowship.attr('id', 'the-fellowship');
+  $('body').append($('#the-fellowship'));
+  
+  
+  // var $landH1 = $('<h1></h1>');
+  // $fellowship.append($landH1);
+  // $landH1.append('The Fellowship');
+
+    // for (var i = 0; i < fellowship.length; i++) {
+    // $singleBuddy = $('<li></li>');
+    // $singleBuddy.html(buddies[i]);
+    // $singleBuddy.append($fellowship);
+      
+    // }
+
+}
+
+
+
+
+  // var $fellowship = $('<section>, </section>');
+  // $fellowship.attr('id', 'the-fellowship');
+  // var fellowshipTitle =
+  // $('body').append($fellowship);
+
+  //   for (let i=1; i < lands.length; i++) {
+          // $rivendell = $('<section>, </section>');
+          // $rivendell.html(buddies[i]);
+          // $rivendell.attr('h1' , 'revisedRivendell');
+          // $rivendell.append($fellowship);
+      
+  
+ 
+
+  // $('body').append('hobbits')
+  // $('body').append('buddies');
+  // $theFellowship = $('<div></div>');
+  // $theFellowship.attr('id', 'the-fellowship');
+  // $('the-fellowship').append('h1', 'The Fellowship');
   
 
 
@@ -257,6 +295,9 @@ function forgeTheFellowShip() {
 
 
   // $('#rivendell').append(makeBuddies);
+     
+
+
 
 
   // move the hobbits and the buddies to Rivendell
@@ -264,9 +305,11 @@ function forgeTheFellowShip() {
   // add an h1 with the text 'The Fellowship' to this new div
   // add each hobbit and buddy one at a time to 'the-fellowship'
   // after each character is added make an alert that they have joined your party
-}
+
 
 function theBalrog() {
+
+
   // change the inner HTML of the 'Gandalf' node to 'Gandalf the White'
   // add a class "the-white" to this element
   // in the style.css file, add a css rule for the class "the-white"
