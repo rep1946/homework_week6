@@ -64,6 +64,9 @@ function makeMiddleEarth() {
     $landArticle.append($landH1);
   }
 }
+// call or execute this function
+makeMiddleEarth();
+
 
 function makeHobbits() {
   console.log('Make hobbits');
@@ -97,6 +100,7 @@ $('#the-shire').append($hobbitList);
   // $hobbit.append($hobbits);
   // console.log($hobbits);
 }
+makeHobbits();
 
 
 
@@ -162,6 +166,7 @@ function keepItSecretKeepItSafe() {
   // create an empty div with an id of 'the-ring' and innerHTML of "The ring"
   // add the ring as a child of Frodo
 }
+keepItSecretKeepItSafe();
 
 function makeBaddies() {
 
@@ -187,6 +192,7 @@ $('body').append($baddiesList);
   // display an unordered list of baddies in Mordor
   // give each of the baddies a class of "baddy"
 }
+makeBaddies();
 
 function makeBuddies() {
 
@@ -194,7 +200,7 @@ function makeBuddies() {
 
   $('body').append($buddiesAside);
   $buddiesAside.attr('id', 'myBuddies');
-  $('#mordor:first-child').append($buddiesAside);
+  $('#mordor').append($buddiesAside);
 
   $myBuddies = $('<ul></ul>');
   $myBuddies.attr('id', 'buddy-list');
@@ -216,41 +222,43 @@ for (let i = 0; i < buddies.length; i++) {
   // give each of the buddies a class of "buddy"
 $('aside').append($myBuddies);
 }
+makeBuddies();
 
 
 
 
 function leaveTheShire() {
-
-$('body').append(makeMiddleEarth);
-$('body').append(makeHobbits);
 $('#rivendell').append($('#the_Hobbits'));
-$('#the-shire').remove('#the_Hobbits');
-
-
-
-
+// $('#the-shire').remove('#the_Hobbits');
   // grab the hobbits and move them to Rivendell
 }
+leaveTheShire();
 
 function beautifulStranger() {
-  $('body').append(makeBuddies);
+  console.log('inside beautifulStranger');
+
 
   $('.buddy:nth-child(4)').text('Aragorn');
 
   // change the buddy 'Strider' node to "Aragorn"
 }
+beautifulStranger();
 
 var fellowship = [hobbits, buddies];
+
 function forgeTheFellowShip() {
-  $('body').append(makeMiddleEarth);
-  $('body').append(makeBuddies);
-  $('body').append(makeHobbits);
-  $('#rivendell').append($('#the_Hobbits'));
+  console.log('inside forgeTheFellowShip');
+  // $('#rivendell').append($('#the_Hobbits'));
   $('#rivendell').append($('#myBuddies'));
-  $fellowship = $('<div></div>');
-  $fellowship.attr('id', 'the-fellowship');
-  $('body').append($('#the-fellowship'));
+  var $fellowship = $('<div></div>'); // creating the div
+  $fellowship.attr('id', 'the-fellowship'); // assigning id
+  console.log('--> ',$fellowship);
+
+  // two more things... add the hobbits and the buddies to the fellowship
+  $('#the_Hobbits').appendTo($fellowship)
+  $('.buddy-list').appendTo($fellowship);
+  $('#rivendell').append($fellowship)
+  // $('body').append($fellowship); // same div, now put it here
   
   
   // var $landH1 = $('<h1></h1>');
@@ -265,6 +273,7 @@ function forgeTheFellowShip() {
     // }
 
 }
+
 
 
 
@@ -306,9 +315,9 @@ function forgeTheFellowShip() {
   // add each hobbit and buddy one at a time to 'the-fellowship'
   // after each character is added make an alert that they have joined your party
 
-
+forgeTheFellowShip();
 function theBalrog() {
-
+$('.buddy-list').children('li.buddy').html('Gandalf the White');
 
   // change the inner HTML of the 'Gandalf' node to 'Gandalf the White'
   // add a class "the-white" to this element
@@ -329,6 +338,12 @@ function itsDangerousToGoAlone(){
 }
 
 function weWantsIt() {
+var $gollum = ('gollum');
+$gollum =('<div>');
+$gollum.attr('id', 'gollum');
+$('#the-ring').appendTo('#mordor');
+
+
   // Create a div with an id of 'gollum' and add it to Mordor
   // Remove the ring from Frodo and give it to Gollum
   // Create a condition (Maybe an IF statement) that changes the font-color of the ring div to Red if
