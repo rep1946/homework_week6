@@ -314,10 +314,11 @@ function forgeTheFellowShip() {
   // add an h1 with the text 'The Fellowship' to this new div
   // add each hobbit and buddy one at a time to 'the-fellowship'
   // after each character is added make an alert that they have joined your party
-
+var findList = $('.buddy')[0];
 forgeTheFellowShip();
 function theBalrog() {
-$('.buddy-list').children('li.buddy').html('Gandalf the White');
+$('#buddy-list').find(findList).html('Gandalf the White');
+
 
   // change the inner HTML of the 'Gandalf' node to 'Gandalf the White'
   // add a class "the-white" to this element
@@ -325,23 +326,73 @@ $('.buddy-list').children('li.buddy').html('Gandalf the White');
   // have a white background and a grey border
 }
 
+console.log(findList);
+
+
+theBalrog();
+var findBaromir = $('.buddy')[4];
+var findUrukhai = $('.baddy')[2];
 function hornOfGondor() {
+
+  alert('The horn of gondor has been blown! <b>Boromir\'s been killed by the Uruk\-hai! Boromir\'s been killed by the Uruk\-hai!</b>');
+  $('#buddy-list').find(findBaromir).css('text-decoration', 'line-through');
+  $('#baddie-list').find(findUrukhai).remove('.baddy');
+
+
+
   // pop up an alert that the horn of gondor has been blown
   // Boromir's been killed by the Uruk-hai!
   // put a linethrough on boromir's name
   // Remove the Uruk-Hai from the Baddies on the page
 }
 
+// console.log(findBaromir)
+// console.log(findUrukhai.length);
+
+
+hornOfGondor();
+
+  var findFrodo = $('.hobbit')[0];
+  var findSam = $('.hobbit')[3];
+
 function itsDangerousToGoAlone(){
+  // create a new list
+  var $hobbitlist2 = $('<ul></ul>');
+  // give an attribute
+  $hobbitlist2.attr('id', 'New-Hobbit-List');
+  // add it to the DOM
+  $('#mordor').append($hobbitlist2);
+
+
+  // find the hobbits 
+  $('#the_Hobbits').find(findFrodo).appendTo('#New-Hobbit-List');
+  $('#the_Hobbits').find(findSam).appendTo('#New-Hobbit-List');
+  // create a new DIV inside Mordor
+  var $mountDoom = $('<div>');
+  // Add it to the DOM
+  $('#mordor').append($mountDoom);
+  // Give it an ID
+  $mountDoom.attr('id', 'mount-doom');
+
+
   // take Frodo and Sam out of the fellowship and move them to Mordor
   // add a div with an id of 'mount-doom' to Mordor
 }
 
+
 function weWantsIt() {
-var $gollum = ('gollum');
-$gollum =('<div>');
-$gollum.attr('id', 'gollum');
-$('#the-ring').appendTo('#mordor');
+  var $gollum = $('<div>');
+  $gollum.attr('id' , 'gollum');
+  $gollum.appendTo('#mordor');
+  $('#the-ring').appendTo($gollum);
+    if $(('#the-ring') = [0]) {
+      
+    }
+
+// $gollum =('<div>');
+// $gollum.attr('id', 'gollum');
+// $('#the-ring').appendTo('#mordor');
+
 
 
   // Create a div with an id of 'gollum' and add it to Mordor
